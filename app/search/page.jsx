@@ -4,7 +4,7 @@ const SearchPage = async ({ searchParams }) => {
 
   return (
     <div className='text-white'>
-      <h2 className='text-2xl ml-2'>Search results for "{query}"</h2>
+      <h2 className='text-2xl ml-2'>Search results for {query}</h2>
       {query ? (
         <Search query={query} /> 
       ) : (
