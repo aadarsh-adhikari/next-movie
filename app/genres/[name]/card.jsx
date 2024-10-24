@@ -52,7 +52,7 @@ const Gcard = async ({ params }) => {
               </article>
             ))
           ) : (
-            <p>No results found for "{params.name}".</p>
+            <p>No results found for {params.name}.</p>
           )}
         </div>
       </section>
