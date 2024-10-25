@@ -5,11 +5,17 @@ import { FaSearch } from 'react-icons/fa';
 
 const SearchBar = () => {
   const router = useRouter();
-  const [keyword, setKeyword] = useState('')
+  const [keyword, setKeyword] = useState('');
 
   const search = () => {
     if (keyword.trim()) {
       router.push(`/search?query=${encodeURIComponent(keyword)}`);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      search();
     }
   };
 
@@ -20,7 +26,8 @@ const SearchBar = () => {
         placeholder="Search..."
         className="p-2 rounded-md border-2 border-red-400 focus:outline-none focus:ring-2 focus:ring-red-300"
         onChange={(e) => setKeyword(e.target.value)}
-        value={keyword} // Control the input with the state
+        onKeyPress={handleKeyPress}
+        value={keyword} 
       />
       <button
         className="p-2 bg-red-400 rounded-md text-white hover:bg-red-500 transition duration-300"

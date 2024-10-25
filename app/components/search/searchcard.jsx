@@ -5,7 +5,7 @@ import Link from 'next/link';
 const Searchcard = ({ movies }) => {
   return (
     <section className="m-4">
-      <div className="w-full grid grid-cols-3 lg:grid-cols-6 gap-4">
+      <div className="w-full grid  grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
         {movies
           .filter((item) => item.poster_path) 
           .map((item) => (
@@ -31,7 +31,7 @@ const Searchcard = ({ movies }) => {
                   <div className="flex gap-1 lg:gap-3 cursor-text">
                     <p>⭐{Math.floor(item.vote_average * 10) / 10}</p>
                   </div>
-                  <p className="text-xs text-gray-800 mt-1">
+                  <p className="text-xs mt-1">
                     {item.title ? 'Movie' : 'TV Series'}
                   </p>
                 </div>

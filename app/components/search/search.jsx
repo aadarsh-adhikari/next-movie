@@ -16,10 +16,8 @@ const Search = async ({ query }) => {
     const data = await response.json();
     const data2 = await response2.json();
 
-    // Combine movie and tv show results
     movies = [...data.results, ...data2.results];
 
-    // Sort movies and tv shows by vote_average (descending order)
     movies.sort((a, b) => b.vote_average - a.vote_average);
   } catch (err) {
     error = err.message;
@@ -27,7 +25,7 @@ const Search = async ({ query }) => {
 
   return (
     <div >
-      <h1 className="text-2xl font-bold">Movies & TV Shows (Sorted by Rating)</h1>
+      <h1 className="text-2xl font-bold mb-3 ml-2 ">Movies & TV Shows (Sorted by Rating)</h1>
       {error ? (
         <div className="text-red-500">Error fetching data: {error}</div>
       ) : (

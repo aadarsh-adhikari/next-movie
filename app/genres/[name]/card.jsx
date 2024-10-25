@@ -15,7 +15,7 @@ const Gcard = async ({ params }) => {
       <section className="m-4">
         <h1 className='text-2xl text-white m-2 mb-4 lg-m-6 capitalize'>{params.name} {params.type}
         </h1>
-        <div className="w-full grid grid-cols-3 lg:grid-cols-6 gap-4 text-white">
+        <div className="w-full grid grid-cols-2 lg:grid-cols-6 gap-4 text-white">
           {data?.results?.length > 0 ? (
             data.results.slice(0, 18).map((item) => (
               <article
@@ -25,7 +25,7 @@ const Gcard = async ({ params }) => {
                 <Link
                   href={{
                     pathname: `/overview/${item.id}`,
-                    query: { type: params.type }, // Pass the content type (movie or tv)
+                    query: { type: params.type }, 
                   }}
                 >
                   <Image
