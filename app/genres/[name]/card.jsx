@@ -58,7 +58,6 @@ const Gcard = async ({ params }) => {
       </section>
     );
   } catch (error) {
-    console.error("Fetch error:", error);
     return <p>Error fetching data: {error.message}</p>;
   }
 };
