@@ -5,7 +5,7 @@ const MediaCard = ({ media, type }) => {
   return (
     <section className="m-4">
       <div className="w-full grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-white">
-        {media.slice(0, 18).map((item) => (
+        {media.slice(0, 20).map((item) => (
           <article
             key={item.id}
             className="max-w-md relative rounded-md group h-fit overflow-hidden"
@@ -31,7 +31,15 @@ const MediaCard = ({ media, type }) => {
             
                 <div className="flex gap-1 lg:gap-3 cursor-text">
                   <p>⭐{Math.floor(item.vote_average * 10) / 10}</p>
-                  <p>{type === 'movie' ? item.release_date.split('-')[0] : item.first_air_date.split('-')[0]}</p>
+                  <p>
+                  {type === 'movie'
+                      ? item.release_date
+                        ? item.release_date.split('-')[0]
+                        : 'N/A'
+                      : item.first_air_date
+                      ? item.first_air_date.split('-')[0]
+                      : 'N/A'}
+                  </p>
                 </div>
                 <p className="text-2xs mt-1">
                     {item.title ? 'Movie' : 'TV Series'}

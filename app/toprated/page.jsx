@@ -1,11 +1,8 @@
-import React from 'react';
-import TopApi from './api';
-
+import TopApi from "./api";
 const TopRated = () => {
   return (
     <div>
-      
-     <TopApi/>
+  <TopApi/> 
     </div>
   );
 };
