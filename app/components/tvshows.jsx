@@ -1,7 +1,7 @@
 import MediaCard from './mediacard';
 
 const Tvshows = async () => {
-  let shows = [];
+   let shows = [];
   let error = null;
 
   try {
@@ -19,7 +19,6 @@ const Tvshows = async () => {
 } catch (err) {
     error = err.message;
   }
-
   return (
     <div>
       <h1 className="text-2xl font-bold m-6 text-white">Discover Shows</h1>
